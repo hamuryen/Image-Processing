@@ -2,8 +2,8 @@ clc
 clear
 close all
 
-img_a = im2double(imread('focal11.png'));
-img_b = im2double(imread('focal12.png'));
+img_a = im2double(imread('images/inputs/focal11.png'));
+img_b = im2double(imread('images/inputs/focal12.png'));
 img_a = imresize(img_a, [size(img_b, 1) size(img_b, 2)]);
 level = 5;
 
