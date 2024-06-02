@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+input_image = imread('images/inputs/fruits.jpg');
+k = 3;
+subplot(1, 3, 1); imshow(input_image); title('Original Image');
+[quantize_output_image_uniform, map] = quantize(input_image, 'uniform', k);
+subplot(1, 3, 2); imshow(quantize_output_image_uniform, map); title('Unifrom Quantized Image');
+[quantize_output_image_k_means, map] = quantize(input_image, 'k-means', k);
+subplot(1, 3, 3); imshow(quantize_output_image_k_means); title('K-Means Quantized Image');
+segmen_output = segment(input_image, k);
+figure; imshow(segmen_output, []); truesize; title('Segmented Image');
